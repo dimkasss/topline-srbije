@@ -1,13 +1,12 @@
 import { CustomFlowbiteTheme, Navbar } from "flowbite-react";
-import CustomLink from "./CustomLink";
 import BoilerLogo from '../assets/boiler.svg';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const customNavbarTheme: CustomFlowbiteTheme['navbar'] = {
   root: {
-    base: "bg-[--background] px-2 py-2.5 border-[--main] dark:border-gray-700 dark:bg-gray-800 sm:px-4",
+    base: "nav px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4",
     rounded: {
-      on: "rounded",
+      on: "",
       off: "",
     },
     bordered: {
@@ -26,18 +25,18 @@ const customNavbarTheme: CustomFlowbiteTheme['navbar'] = {
     base: "flex items-center",
   },
   collapse: {
-    base: "w-full md:block md:w-auto",
-    list: "mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium",
+    base: "w-full xl:block xl:w-auto",
+    list: "mt-4 flex flex-col xl:mt-0 xl:flex-row xl:space-x-8 xl:text-sm xl:font-medium",
     hidden: {
       on: "hidden",
       off: "",
     }
   },
   link: {
-    base: "block py-2 pr-4 pl-3 md:p-0",
+    base: "block py-2 pr-4 pl-3 xl:p-0",
     active: {
-      on: "bg-cyan-700 text-white dark:text-white md:bg-transparent md:text-cyan-700",
-      off: "border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white",
+      on: "bg-[--button] text-white dark:text-white xl:bg-transparent xl:text-[--button]",
+      off: "border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white xl:border-0 xl:hover:bg-transparent xl:hover:text-[--button] xl:dark:hover:bg-transparent xl:dark:hover:text-white",
     },
     disabled: {
       on: "text-gray-400 hover:cursor-not-allowed dark:text-gray-600",
@@ -45,32 +44,30 @@ const customNavbarTheme: CustomFlowbiteTheme['navbar'] = {
     }
   },
   toggle: {
-    base: "inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden",
+    base: "inline-flex items-center rounded-lg p-2 text-sm text-gray-500 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 xl:hidden",
     icon: "h-6 w-6 shrink-0",
   }
 }
 
 const Navigation = () => {
+  const location = useLocation();
   return ( 
-    <Navbar fluid rounded border theme={customNavbarTheme} className="md:p-5 md:*:p-3 *:rounded-2xl shadow-2xl">
-      <Navbar.Brand as={Link} href="https://google.com">
+    <Navbar fluid rounded className="h-21 lg:p-5 lg:*:p-3 *:rounded-2xl border-0 border-b-2 border-[--main] drop-shadow-l w-full" theme={customNavbarTheme}>
+      <Navbar.Brand href="/" className="justify-center items-center">
         {/* <img src={Cloud} width="100px" color="red" className="mr-3 h-6 sm:h-9" alt="Logo" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite React</span> */}
-        <img src={BoilerLogo} className="mr-3 h-6 sm:h-9" alt="Boiler Logo" />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Heating Serbia</span>
+        <img src={BoilerLogo} className="mt-3 mr-3 h-8 lg:h-12" alt="Boiler Logo" />
+        <span className="self-center whitespace-nowrap lg:text-xl font-extrabold dark:text-white">Тепло Сербии</span>
       </Navbar.Brand>
-      <Navbar.Toggle />
-      <Navbar.Collapse className="md:[&>*]:text-xl">
-        <Navbar.Link href="#" active>
-          Home
-        </Navbar.Link>
-        <Navbar.Link as={CustomLink} href="#">
-          About
-        </Navbar.Link>
-        <Navbar.Link href="/">Services</Navbar.Link>
-        <Navbar.Link href="/">Pricing</Navbar.Link>
-        <Navbar.Link href="/">Contact</Navbar.Link>
+      
+      <Navbar.Collapse className="md:*:*:text-lg">
+        <Navbar.Link to="/" as={Link} active={location.pathname === "/"}>Главная</Navbar.Link>
+        <Navbar.Link to="/heating" as={Link} active={location.pathname === "/heating"}>Отопление</Navbar.Link>
+        <Navbar.Link to="/gas-boilers" as={Link} active={location.pathname === "/gas-boilers"}>Газовые котлы</Navbar.Link>
+        <Navbar.Link to="/heat-pumps" as={Link} active={location.pathname === "/heat-pumps"}>Тепловые насосы</Navbar.Link>
+        <Navbar.Link to="/air-conditioners" as={Link} active={location.pathname === "/air-conditioners"}>Кондиционеры</Navbar.Link>
       </Navbar.Collapse>
+      <Navbar.Toggle />
     </Navbar>
    );
 }

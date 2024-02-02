@@ -1,17 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:wght@300;500;700;900&family=Poppins:wght@200;300;500;700;900&family=Roboto:wght@100;300;500;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   --background: #eff0f3;
-  --button: #ff8e3c;
+  --secondary2: #fffffe;
+  --secondary: #4056a1;
+  
+  --highlighted: #d9376e;
   --main: #0d0d0d;
   --paragraph: #2a2a2a;
+
+  --button:  #FFCF48;
+
+  --text: #6Fb3b8;
+  --negative: #3498a1;
+  --light: #badfe7;
+  --secondary: #c2edce;
+  --background: #f1f1f1;
+}
+
+::selection {
+  background: var(--negative);
+  color: white;
 }
 
 * {
-  color: var(--main);
+  font-family: 'Merriweather';
+  font-family: 'Arial', 'Roboto';
+  color: #4a4a4a;
   background: var(--background);
+  font-size: 16px;
+  line-height: 24px;
+  scrollbar-gutter: auto;
 }
 
 .btn {
@@ -28,4 +51,55 @@ html, body, #root {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.nav, .nav * {
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  background: var(--negative);
+  color: white; 
+}
+
+.nav:hover, .nav *:hover {
+  color: #979797;
+}
+
+.naming {
+  font-size: 2rem;
+}
+
+.naming * {
+  padding: 5rem 0;
+}
+
+p {
+  text-indent: 2.5rem;
+}
+
+ul {
+  padding-left: 4rem;
+}
+
+ul.list li::marker {
+  content: "• "; 
+  color: black;
+  font-size: 1.2em;
+}
+
+.anchor:link {
+  color: #497DDD; 
+  border-bottom: 1px solid;
+}
+.anchor:visited {
+  color: #EF7D55;
+  border-bottom: 1px solid;
+}
+.anchor:hover {
+  color: #154088; 
+  border: none;
+}
+.anchor:active {
+  color: #497DDD;
+  border: none; 
 }
