@@ -1,6 +1,7 @@
 import { CustomFlowbiteTheme, Navbar } from "flowbite-react";
 import BoilerLogo from '../assets/boiler.svg';
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const customNavbarTheme: CustomFlowbiteTheme['navbar'] = {
   root: {
@@ -50,6 +51,12 @@ const customNavbarTheme: CustomFlowbiteTheme['navbar'] = {
 }
 
 const Navigation = () => {
+  const { t, i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === 'ru' ? 'sr' : 'ru');
+  }
+
   const location = useLocation();
   return ( 
     <Navbar fluid rounded className="h-21 lg:p-5 lg:*:p-3 *:rounded-2xl border-0 border-b-2 border-[--main] drop-shadow-l w-full" theme={customNavbarTheme}>
@@ -57,17 +64,18 @@ const Navigation = () => {
         {/* <img src={Cloud} width="100px" color="red" className="mr-3 h-6 sm:h-9" alt="Logo" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite React</span> */}
         <img src={BoilerLogo} className="mt-3 mr-3 h-8 lg:h-12" alt="Boiler Logo" />
-        <span className="self-center whitespace-nowrap lg:text-xl font-extrabold dark:text-white">Тепло Сербии</span>
+        <span className="self-center whitespace-nowrap lg:text-xl font-extrabold dark:text-white">{t('название')}</span>
       </Navbar.Brand>
-      
-      <Navbar.Collapse className="md:*:*:text-lg">
-        <Navbar.Link to="/" as={Link} active={location.pathname === "/"}>Главная</Navbar.Link>
-        <Navbar.Link to="/heating" as={Link} active={location.pathname === "/heating"}>Отопление</Navbar.Link>
-        <Navbar.Link to="/gas-boilers" as={Link} active={location.pathname === "/gas-boilers"}>Газовые котлы</Navbar.Link>
-        <Navbar.Link to="/heat-pumps" as={Link} active={location.pathname === "/heat-pumps"}>Тепловые насосы</Navbar.Link>
-        <Navbar.Link to="/air-conditioners" as={Link} active={location.pathname === "/air-conditioners"}>Кондиционеры</Navbar.Link>
-      </Navbar.Collapse>
       <Navbar.Toggle />
+      <Navbar.Collapse className="flex flex-row md:*:*:text-lg">
+        <Navbar.Link to="/" as={Link} active={location.pathname === "/"}>{t('главная')}</Navbar.Link>
+        <Navbar.Link to="/heating" as={Link} active={location.pathname === "/heating"}>{t('отопление')}</Navbar.Link>
+        <Navbar.Link to="/gas-boilers" as={Link} active={location.pathname === "/gas-boilers"}>{t('газовые котлы')}</Navbar.Link>
+        <Navbar.Link to="/heat-pumps" as={Link} active={location.pathname === "/heat-pumps"}>{t('тепловые насосы')}</Navbar.Link>
+        <Navbar.Link to="/air-conditioners" as={Link} active={location.pathname === "/air-conditioners"}>{t('кондиционеры')}</Navbar.Link>
+        <Navbar.Link onClick={toggleLanguage} as={Link}>toggle lang</Navbar.Link>
+      </Navbar.Collapse>
+      
     </Navbar>
    );
 }

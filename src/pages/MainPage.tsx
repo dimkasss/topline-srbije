@@ -1,6 +1,7 @@
 import PageWrapper from "../components/PageWrapper";
 import Section from "../components/Section";
 
+
 const MainPage = () => {
   return ( 
     <PageWrapper>
@@ -8,7 +9,6 @@ const MainPage = () => {
         Главная
       </Section>
     </PageWrapper>
-    
    );
 }
  
