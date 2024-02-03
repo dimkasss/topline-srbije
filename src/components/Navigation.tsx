@@ -60,7 +60,7 @@ const Navigation = () => {
   const location = useLocation();
   return ( 
     <Navbar fluid rounded className="h-21 lg:p-5 lg:*:p-3 *:rounded-2xl border-0 border-b-2 border-[--main] drop-shadow-l w-full" theme={customNavbarTheme}>
-      <Navbar.Brand href="/" className="justify-center items-center">
+      <Navbar.Brand href="/teplo-serbii/" className="justify-center items-center">
         {/* <img src={Cloud} width="100px" color="red" className="mr-3 h-6 sm:h-9" alt="Logo" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite React</span> */}
         <img src={BoilerLogo} className="mt-3 mr-3 h-8 lg:h-12" alt="Boiler Logo" />
