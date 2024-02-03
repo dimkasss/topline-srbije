@@ -68,12 +68,12 @@ const Navigation = () => {
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="flex flex-row md:*:*:text-lg">
-        <Navbar.Link to="/" as={Link} active={location.pathname === "/"}>{t('главная')}</Navbar.Link>
-        <Navbar.Link to="/heating" as={Link} active={location.pathname === "/heating"}>{t('отопление')}</Navbar.Link>
-        <Navbar.Link to="/gas-boilers" as={Link} active={location.pathname === "/gas-boilers"}>{t('газовые котлы')}</Navbar.Link>
-        <Navbar.Link to="/heat-pumps" as={Link} active={location.pathname === "/heat-pumps"}>{t('тепловые насосы')}</Navbar.Link>
-        <Navbar.Link to="/air-conditioners" as={Link} active={location.pathname === "/air-conditioners"}>{t('кондиционеры')}</Navbar.Link>
-        <Navbar.Link onClick={toggleLanguage} as={Link}>toggle lang</Navbar.Link>
+        <Navbar.Link to="/teplo-serbii/" as={Link} active={location.pathname === "/teplo-serbii/"}>{t('главная')}</Navbar.Link>
+        <Navbar.Link to="/teplo-serbii/heating" as={Link} active={location.pathname === "/teplo-serbii/heating"}>{t('отопление')}</Navbar.Link>
+        <Navbar.Link to="/teplo-serbii/gas-boilers" as={Link} active={location.pathname === "/teplo-serbii/gas-boilers"}>{t('газовые котлы')}</Navbar.Link>
+        <Navbar.Link to="/teplo-serbii/heat-pumps" as={Link} active={location.pathname === "/teplo-serbii/heat-pumps"}>{t('тепловые насосы')}</Navbar.Link>
+        <Navbar.Link to="/teplo-serbii/air-conditioners" as={Link} active={location.pathname === "/teplo-serbii/air-conditioners"}>{t('кондиционеры')}</Navbar.Link>
+        <Navbar.Link onClick={toggleLanguage} as={Link}>{t('язык')}</Navbar.Link>
       </Navbar.Collapse>
       
     </Navbar>

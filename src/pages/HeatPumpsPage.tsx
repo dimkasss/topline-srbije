@@ -5,12 +5,15 @@ import TeplovoyNasos2 from "../assets/teplovoy-nasos2.jpg";
 import TeplovoyNasos3 from "../assets/teplovoy-nasos-3.jpg";
 import TeplovoyNasos4 from "../assets/teplovoy-nasos-4.jpg";
 import Image from "../components/Image";
+import { useTranslation } from "react-i18next";
 
 const HeatPumpsPage = () => {
+  const { t } = useTranslation();
+
   return ( 
     <PageWrapper>
       <Section doubledHeader>
-      Тепловой насос воздух-вода для дома и бассейна, КПД, принцип, схема отопления
+      {t('тепловой насос')}
       </Section>
       <Section smaller>
         Возобновляемый источник энергии

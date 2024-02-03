@@ -1,11 +1,14 @@
+import { useTranslation } from "react-i18next";
 import PageWrapper from "../components/PageWrapper";
 import Section from "../components/Section";
 
 const GasBoilersPage = () => {
+  const { t } = useTranslation();
+
   return ( 
     <PageWrapper>
-      <Section header>
-        Газовые котлы
+      <Section doubledHeader>
+        {t('газовые котлы')}
       </Section>
     </PageWrapper>
    );

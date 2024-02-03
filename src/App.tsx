@@ -12,11 +12,11 @@ const App = () => {
   <div className="text-[--main] flex flex-col items-center justify-center h-">
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/heating" element={<HeatingPage />} />
-        <Route path="/gas-boilers" element={<GasBoilersPage />} />
-        <Route path="/heat-pumps" element={<HeatPumpsPage />} />
-        <Route path="/air-conditioners" element={<AirConditionersPage />} />
+        <Route path="/teplo-serbii/" element={<MainPage />} />
+        <Route path="/teplo-serbii/heating" element={<HeatingPage />} />
+        <Route path="/teplo-serbii/gas-boilers" element={<GasBoilersPage />} />
+        <Route path="/teplo-serbii/heat-pumps" element={<HeatPumpsPage />} />
+        <Route path="/teplo-serbii/air-conditioners" element={<AirConditionersPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>

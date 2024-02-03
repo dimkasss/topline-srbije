@@ -13,7 +13,7 @@ const Section: React.FC<SectionProps> = ({children, header, smaller, doubledHead
       } ${
         smaller ? 'text-xl !text-left indent-10 font-semibold !pb-2' : ''
       } ${
-        doubledHeader ? 'text-3xl font-extrabold' : ''
+        doubledHeader ? 'text-3xl font-extrabold !text-center' : ''
       }
       `}>
       {children}
