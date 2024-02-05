@@ -12,7 +12,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({children}) => {
   };
 
   return ( 
-    <div className="flex flex-col justify-center items-center pt-14 w-full" id="pageTop">
+    <div className="main flex flex-col justify-center items-center pt-14 w-full" id="pageTop">
       {children}
       <Section header>
         <a onClick={scrollToTop} className="text-xl cursor-pointer anchor border-b-2 border-black">{t('в начало')}</a>

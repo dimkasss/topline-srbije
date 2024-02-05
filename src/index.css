@@ -37,6 +37,13 @@
   scrollbar-gutter: auto;
 }
 
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
 .btn {
   background: var(--button);
 }
@@ -61,8 +68,8 @@ html, body, #root {
   color: white; 
 }
 
-.nav:hover, .nav *:hover {
-  color: #979797;
+.nav:hover, .nav li a:hover {
+  color: var(--button);
 }
 
 .naming {
@@ -81,7 +88,7 @@ ul {
   padding-left: 4rem;
 }
 
-ul.list li::marker {
+.main li::marker {
   content: "• "; 
   color: black;
   font-size: 1.2em;

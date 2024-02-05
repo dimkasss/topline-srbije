@@ -36,8 +36,8 @@ const customNavbarTheme: CustomFlowbiteTheme['navbar'] = {
   link: {
     base: "block py-2 pr-4 pl-3 xl:p-0",
     active: {
-      on: "bg-[--button] text-white dark:text-white xl:bg-transparent xl:text-[--button]",
-      off: "border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white xl:border-0 xl:hover:bg-transparent xl:hover:text-[--button] xl:dark:hover:bg-transparent xl:dark:hover:text-white",
+      on: "bg-[--button] xl:bg-transparent xl:text-[--button]",
+      off: "border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white xl:border-0 xl:hover:bg-transparent xl:hover:text-[--button] xl:dark:hover:bg-transparent xl:dark:hover:text-white",
     },
     disabled: {
       on: "text-gray-400 hover:cursor-not-allowed dark:text-gray-600",
@@ -45,9 +45,32 @@ const customNavbarTheme: CustomFlowbiteTheme['navbar'] = {
     }
   },
   toggle: {
-    base: "inline-flex items-center rounded-lg p-2 text-sm text-gray-500 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 xl:hidden",
+    base: "inline-flex items-center rounded-lg p-2 text-sm focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 xl:hidden",
     icon: "h-6 w-6 shrink-0",
   }
+}
+
+function Component() {
+  return (
+    <Navbar fluid rounded>
+      <Navbar.Brand as={Link} href="https://flowbite-react.com">
+        <img src="/favicon.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
+        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite React</span>
+      </Navbar.Brand>
+      <Navbar.Toggle />
+      <Navbar.Collapse className="*:border-t *:border-t-orange-300">
+        <Navbar.Link href="#" active>
+          Home
+        </Navbar.Link>
+        <Navbar.Link as={Link} href="#">
+          About
+        </Navbar.Link>
+        <Navbar.Link href="#">Services</Navbar.Link>
+        <Navbar.Link href="#">Pricing</Navbar.Link>
+        <Navbar.Link href="#">Contact</Navbar.Link>
+      </Navbar.Collapse>
+    </Navbar>
+  );
 }
 
 const Navigation = () => {
@@ -66,16 +89,19 @@ const Navigation = () => {
         <img src={BoilerLogo} className="mt-3 mr-3 h-8 lg:h-12" alt="Boiler Logo" />
         <span className="self-center whitespace-nowrap lg:text-xl font-extrabold dark:text-white">{t('название')}</span>
       </Navbar.Brand>
+    
+      {/* TODO: переработать кнопки смены языка: сделать две рядом, и с подписями */}
+      <Link to={location.pathname} onClick={toggleLanguage} className="">{t('язык')}</Link>
+
       <Navbar.Toggle />
-      <Navbar.Collapse className="flex flex-row md:*:*:text-lg">
+      <Navbar.Collapse className="md:*:*:text-lg">
         <Navbar.Link to="/teplo-serbii/" as={Link} active={location.pathname === "/teplo-serbii/"}>{t('главная')}</Navbar.Link>
         <Navbar.Link to="/teplo-serbii/heating" as={Link} active={location.pathname === "/teplo-serbii/heating"}>{t('отопление')}</Navbar.Link>
         <Navbar.Link to="/teplo-serbii/gas-boilers" as={Link} active={location.pathname === "/teplo-serbii/gas-boilers"}>{t('газовые котлы')}</Navbar.Link>
         <Navbar.Link to="/teplo-serbii/heat-pumps" as={Link} active={location.pathname === "/teplo-serbii/heat-pumps"}>{t('тепловые насосы')}</Navbar.Link>
         <Navbar.Link to="/teplo-serbii/air-conditioners" as={Link} active={location.pathname === "/teplo-serbii/air-conditioners"}>{t('кондиционеры')}</Navbar.Link>
-        <Navbar.Link onClick={toggleLanguage} as={Link}>{t('язык')}</Navbar.Link>
       </Navbar.Collapse>
-      
+
     </Navbar>
    );
 }
