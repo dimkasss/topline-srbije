@@ -5,11 +5,16 @@ import HeatingSystems2 from "../assets/sys-otopl-2.jpg";
 import HeatingSystems3 from "../assets/sys-otopl-3.jpg";
 import HeatingSystems4 from "../assets/sys-otopl-4.jpg";
 import HeatingSystems5 from "../assets/sys-otopl-5.jpg";
+import HeatingSystems6 from "../assets/sys-otopl-6.jpg";
+import HeatingSystems7 from "../assets/sys-otopl-7.jpeg";
+import HeatingSystems8_ru from "../assets/sys-otopl-8-ru.png";
+import HeatingSystems8_rs from "../assets/sys-otopl-8-rs.png";
+import HeatingSystems9 from "../assets/sys-otopl-9.png";
 import Image from "../components/Image";
 import { useTranslation } from "react-i18next";
 
 const HeatingPage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return ( 
     <PageWrapper>
@@ -37,7 +42,158 @@ const HeatingPage = () => {
         <p>
           {t('отопление-6')}
         </p>
+        <p>
+          {t('отопление-6-1')}
+        </p>
+        <p>
+          {t('отопление-6-2')}
+        </p>
       </Section>
+      <Section header>
+        {t('отопление-6-3')}
+      </Section>
+      <Image img={HeatingSystems6} width="700px" alt="Радиаторное отопление"/>
+      <Section>
+        <p>
+          {t('отопление-6-4')}
+        </p>
+        <ul className="list">
+          <li>{t('отопление-6-5')}</li>
+          <li>{t('отопление-6-6')}</li>
+          <li>{t('отопление-6-7')}</li>
+          <li>{t('отопление-6-8')}</li>
+          <li>{t('отопление-6-9')}</li>
+          <li>{t('отопление-6-10')}</li>
+          <li>{t('отопление-6-11')}</li>
+        </ul>
+        <Image img={HeatingSystems7} width="700px" alt="Радиаторное отопление"/>
+        <br />
+        <p>
+          {t('отопление-6-12')}
+        </p>
+        <ul className="list">
+          <li>{t('отопление-6-13')}</li>
+          <li>{t('отопление-6-14')}</li>
+          <li>{t('отопление-6-15')}</li>
+          <li>{t('отопление-6-16')}</li>
+          <li>{t('отопление-6-17')}</li>
+          <li>{t('отопление-6-18')}</li>
+          <li>{t('отопление-6-19')}</li>
+          <li>{t('отопление-6-20')}</li>
+        </ul>
+      </Section>
+
+      <Image img={i18n.language == "ru" ? HeatingSystems8_ru : HeatingSystems8_rs} width="700px" alt="Теплообмен в комнате"/>
+
+      <Section>
+        <p>
+          {t('отопление-6-21')}
+        </p>
+      </Section>
+
+      <Image img={HeatingSystems9} width="700px" alt="Теплый пол"/>
+
+
+      <Section header>
+        {t('отопление-6-22')}
+      </Section>
+
+      <Section>
+        <p>
+          {t('отопление-6-23')}
+        </p>
+        <p>
+          {t('отопление-6-24')}
+        </p>
+        <p>
+          {t('отопление-6-25')}
+        </p>        
+        <p>
+          {t('отопление-6-26')}
+        </p>
+        <p>
+          {t('отопление-6-27')}
+        </p>
+        <p>
+          {t('отопление-6-28')}
+        </p>
+        <p>
+          {t('отопление-6-29')}
+        </p>
+        <p>
+          {t('отопление-6-30')}
+        </p>
+        <p>
+          {t('отопление-6-31')}
+        </p>
+        <p>
+          {t('отопление-6-32')}
+        </p>
+        <p>
+          {t('отопление-6-33')}
+        </p>
+      </Section>
+
+      <Section>
+        <table className="table">
+          <caption>{t('отопление-6-34')}</caption>
+          <thead>
+            <tr>
+              <th className="w-1/3 text-center">{t('отопление-6-35')}</th>
+              <th className="w-2/3 text-center">{t('отопление-6-36')}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>+26 °C</td>
+              <td>{t('отопление-6-37')}</td>
+            </tr>
+            <tr>
+              <td>+27 °C</td>
+              <td>{t('отопление-6-38')}</td>
+            </tr>
+            <tr>
+              <td>+29 °C</td>
+              <td>{t('отопление-6-39')}</td>
+            </tr>
+            <tr>
+              <td>+33 °C</td>
+              <td>{t('отопление-6-40')}</td>
+            </tr>
+            <tr>
+              <td>+35 °C</td>
+              <td>{t('отопление-6-41')}</td>
+            </tr>
+          </tbody>
+        </table>
+      </Section>
+        
+        
+      <Section>
+        <p className="font-bold">
+          {t('отопление-6-42')}
+        </p>
+        <p>
+          {t('отопление-6-43')}
+        </p>
+        <p>
+          {t('отопление-6-44')}
+        </p>
+        <p className="font-bold">
+          {t('отопление-6-45')}
+        </p>
+        <p>
+          {t('отопление-6-46')}
+        </p>
+        <p>
+          {t('отопление-6-47')}
+        </p>
+        <p className="font-bold">
+          {t('отопление-6-48')}
+        </p>
+      </Section>
+
+
       <Section header>
         {t('отопление-7')}
       </Section>
@@ -83,7 +239,12 @@ const HeatingPage = () => {
           <li>{t('отопление-22')}</li>
           <li>{t('отопление-23')}</li>
         </ul>
-        {t('отопление-24')}
+        <p>
+          {t('отопление-24')}
+        </p>
+        <p>
+          {t('отопление-24-1')}
+        </p>
         <Image width="700px" img={HeatingSystems2} alt="Твердотопливный котёл"/>
       </Section>
       <Section smaller>

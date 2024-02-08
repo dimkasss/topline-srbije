@@ -30,7 +30,7 @@
 * {
   font-family: 'Merriweather';
   font-family: 'Arial', 'Roboto';
-  color: #4a4a4a;
+  color: #0f0f0f;
   background: var(--background);
   font-size: 16px;
   line-height: 24px;
@@ -109,4 +109,27 @@ ul {
 .anchor:active {
   color: #497DDD;
   border: none; 
+}
+
+/* table styles */
+.table {
+	width: 100%;
+	margin-bottom: 20px;
+	border-collapse: collapse; 
+}
+.table th {
+	font-weight: bold;
+	padding: 5px;
+	background: #efefef;
+	border: 1px solid #dddddd;
+}
+.table td {
+	border: 1px solid #dddddd;
+	padding: 5px;
+}
+.table tr td:first-child, .table tr th:first-child {
+	border-left: none;
+}
+.table tr td:last-child, .table tr th:last-child {
+	border-right: none;
 }
