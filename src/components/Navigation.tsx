@@ -60,29 +60,30 @@ const Navigation = () => {
   const location = useLocation();
   return ( 
     <Navbar fluid rounded className="h-21 lg:p-5 lg:*:p-3 *:rounded-2xl border-0 border-b-2 border-[--main] drop-shadow-l w-full" theme={customNavbarTheme}>
-      <Navbar.Brand href="/teplo-serbii/" className="justify-center items-center">
+      <Navbar.Brand href="/teplo-serbii/" className="justify-center items-center self-start">
         {/* <img src={Cloud} width="100px" color="red" className="mr-3 h-6 sm:h-9" alt="Logo" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite React</span> */}
         <img src={BoilerLogo} className="mt-3 mr-3 h-8 lg:h-12" alt="Boiler Logo" />
         <span className="self-center whitespace-nowrap lg:text-xl font-extrabold dark:text-white">{t('название')}</span>
       </Navbar.Brand>
 
+      <div className="flex flex-row *:px-2 items-center">
+        <Link to={location.pathname} onClick={toggleLanguage} className="flex items-center justify-center self-start pt-2 lg:pt-2 lg:pr-8 justify-self-end xl:self-center xl:pt-0">{t('язык')}</Link>
+        <div className="flex flex-row">
+          {/* TODO: переработать кнопки смены языка: сделать две рядом, и с подписями */}
+        
 
-      <div className="flex flex-row">
-        {/* TODO: переработать кнопки смены языка: сделать две рядом, и с подписями */}
-      <Link to={location.pathname} onClick={toggleLanguage} className="flex items-center justify-center underline">{t('язык')}</Link>
-
-      <Navbar.Toggle />
-      <Navbar.Collapse className="md:*:*:text-lg">
-        <Navbar.Link to="/teplo-serbii/" as={Link} active={location.pathname === "/teplo-serbii/"}>{t('главная')}</Navbar.Link>
-        <Navbar.Link to="/teplo-serbii/heating" as={Link} active={location.pathname === "/teplo-serbii/heating"}>{t('отопление')}</Navbar.Link>
-        <Navbar.Link to="/teplo-serbii/gas-boilers" as={Link} active={location.pathname === "/teplo-serbii/gas-boilers"}>{t('газовые котлы')}</Navbar.Link>
-        <Navbar.Link to="/teplo-serbii/heat-pumps" as={Link} active={location.pathname === "/teplo-serbii/heat-pumps"}>{t('тепловые насосы')}</Navbar.Link>
-        <Navbar.Link to="/teplo-serbii/air-conditioners" as={Link} active={location.pathname === "/teplo-serbii/air-conditioners"}>{t('кондиционеры')}</Navbar.Link>
-      </Navbar.Collapse>
+        
+        <Navbar.Collapse className="md:*:*:text-lg *:pl-0">
+          <Navbar.Link to="/teplo-serbii/" as={Link} active={location.pathname === "/teplo-serbii/"}>{t('главная')}</Navbar.Link>
+          <Navbar.Link to="/teplo-serbii/heating" as={Link} active={location.pathname === "/teplo-serbii/heating"}>{t('отопление')}</Navbar.Link>
+          <Navbar.Link to="/teplo-serbii/gas-boilers" as={Link} active={location.pathname === "/teplo-serbii/gas-boilers"}>{t('газовые котлы')}</Navbar.Link>
+          <Navbar.Link to="/teplo-serbii/heat-pumps" as={Link} active={location.pathname === "/teplo-serbii/heat-pumps"}>{t('тепловые насосы')}</Navbar.Link>
+          <Navbar.Link to="/teplo-serbii/air-conditioners" as={Link} active={location.pathname === "/teplo-serbii/air-conditioners"}>{t('кондиционеры')}</Navbar.Link>
+        </Navbar.Collapse>
+        </div>
+      <Navbar.Toggle className="self-start justify-self-end"/>
       </div>
-      
-
     </Navbar>
    );
 }

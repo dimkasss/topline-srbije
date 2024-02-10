@@ -3,11 +3,12 @@ interface SectionProps {
   doubledHeader?: boolean;
   header?: boolean;
   smaller?: boolean;
+  className?: string;
 }
 
-const Section: React.FC<SectionProps> = ({children, header, smaller, doubledHeader}) => {
+const Section: React.FC<SectionProps> = ({children, header, smaller, doubledHeader, className}) => {
   return ( 
-    <div className={`pb-20 text-justify w-4/5 xl:w-[50%] 
+    <div className={`pb-20 text-justify w-4/5 xl:w-[50%] ${className}
       ${
         header ? 'text-2xl !text-center indent-0 font-bold !pb-4 xl:w-3/5' : ''
       } ${
