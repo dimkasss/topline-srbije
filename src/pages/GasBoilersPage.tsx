@@ -10,6 +10,9 @@ const GasBoilersPage = () => {
       <Section doubledHeader>
         {t('газовые котлы')}
       </Section>
+      <Section header>
+        {t('в разработке')}
+      </Section>
     </PageWrapper>
    );
 }

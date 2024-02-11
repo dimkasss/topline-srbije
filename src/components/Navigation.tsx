@@ -76,6 +76,7 @@ const Navigation = () => {
         
         <Navbar.Collapse className="md:*:*:text-lg *:pl-0">
           <Navbar.Link to="/teplo-serbii/" as={Link} active={location.pathname === "/teplo-serbii/"}>{t('главная')}</Navbar.Link>
+          <Navbar.Link to="/teplo-serbii/service" as={Link} active={location.pathname === "/service/"}>{t('услуги')}</Navbar.Link>
           <Navbar.Link to="/teplo-serbii/heating" as={Link} active={location.pathname === "/teplo-serbii/heating"}>{t('отопление')}</Navbar.Link>
           <Navbar.Link to="/teplo-serbii/gas-boilers" as={Link} active={location.pathname === "/teplo-serbii/gas-boilers"}>{t('газовые котлы')}</Navbar.Link>
           <Navbar.Link to="/teplo-serbii/heat-pumps" as={Link} active={location.pathname === "/teplo-serbii/heat-pumps"}>{t('тепловые насосы')}</Navbar.Link>

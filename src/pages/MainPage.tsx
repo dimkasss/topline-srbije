@@ -3,6 +3,7 @@ import PageWrapper from "../components/PageWrapper";
 import Section from "../components/Section";
 import Main1 from "../assets/main-1.svg";
 import Image from "../components/Image";
+import { Link } from "react-router-dom";
 
 
 const MainPage = () => {
@@ -12,7 +13,7 @@ const MainPage = () => {
       <Section doubledHeader className="text-3xl mt-20 pb-5">
         {t('тепло сербии')}
       </Section>
-      <Image img={Main1} alt="Тепло Сербии" width="700px" />
+      <Image img={Main1} alt="Тепло Сербии" width="900px" />
       <Section header className="mt-16">
         {t('главная-1')}
       </Section>
@@ -43,6 +44,9 @@ const MainPage = () => {
           <li>{t('главная-10')}</li>
           <li>{t('главная-11')}</li>
         </div>
+      </Section>
+      <Section className="flex justify-center">
+        <p className="text-xl *:text-xl">{t('главная-12')}<Link to="/teplo-serbii/service/" className="p-0 underline font-bold">{t('главная-13')}</Link></p> 
       </Section>
     </PageWrapper>
    );

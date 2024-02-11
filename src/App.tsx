@@ -6,6 +6,7 @@ import HeatPumpsPage from "./pages/HeatPumpsPage";
 import AirConditionersPage from "./pages/AirConditionersPage";
 import HeatingPage from "./pages/HeatingPage";
 import { Suspense } from "react";
+import ServicePage from "./pages/ServicePage";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/teplo-serbii/" element={<MainPage />} />
+        <Route path="/teplo-serbii/service" element={<ServicePage />}></Route>
         <Route path="/teplo-serbii/heating" element={<HeatingPage />} />
         <Route path="/teplo-serbii/gas-boilers" element={<GasBoilersPage />} />
         <Route path="/teplo-serbii/heat-pumps" element={<HeatPumpsPage />} />

@@ -9,6 +9,9 @@ const AirConditionersPage = () => {
       <Section doubledHeader>
         {t('кондиционеры')}
       </Section>
+      <Section header>
+        {t('в разработке')}
+      </Section>
     </PageWrapper>
    );
 }
