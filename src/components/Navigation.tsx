@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 const customNavbarTheme: CustomFlowbiteTheme['navbar'] = {
   root: {
-    base: "nav px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4",
+    base: "nav px-2 py-2.5 sm:px-4",
     rounded: {
       on: "",
       off: "",
@@ -37,15 +37,15 @@ const customNavbarTheme: CustomFlowbiteTheme['navbar'] = {
     base: "block py-2 pr-4 pl-3 xl:p-0",
     active: {
       on: "text-[--button]",
-      off: "border-gray-100  text-gray-700 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white xl:border-0 xl:hover:bg-transparent xl:hover:text-[--button] xl:dark:hover:bg-transparent xl:dark:hover:text-white",
+      off: "border-gray-100  text-gray-700 xl:border-0 xl:hover:text-[--button]",
     },
     disabled: {
-      on: "text-gray-400 hover:cursor-not-allowed dark:text-gray-600",
+      on: "text-gray-400 hover:cursor-not-allowed",
       off: "",
     }
   },
   toggle: {
-    base: "inline-flex items-center rounded-lg p-2 text-sm focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 xl:hidden",
+    base: "inline-flex items-center rounded-lg p-2 text-sm focus:outline-none dark:hover:bg-gray-700 xl:hidden",
     icon: "h-6 w-6 shrink-0",
   }
 }
