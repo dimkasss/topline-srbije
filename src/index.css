@@ -68,6 +68,10 @@ html, body, #root {
   color: white; 
 }
 
+.nav:active, .nav *:focus {
+  color: var(--button);
+}
+
 .nav:hover, .nav li a:hover {
   color: var(--button);
 }

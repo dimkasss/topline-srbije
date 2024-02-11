@@ -36,8 +36,8 @@ const customNavbarTheme: CustomFlowbiteTheme['navbar'] = {
   link: {
     base: "block py-2 pr-4 pl-3 xl:p-0",
     active: {
-      on: "bg-[--button] xl:bg-transparent xl:text-[--button]",
-      off: "border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white xl:border-0 xl:hover:bg-transparent xl:hover:text-[--button] xl:dark:hover:bg-transparent xl:dark:hover:text-white",
+      on: "text-[--button]",
+      off: "border-gray-100  text-gray-700 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white xl:border-0 xl:hover:bg-transparent xl:hover:text-[--button] xl:dark:hover:bg-transparent xl:dark:hover:text-white",
     },
     disabled: {
       on: "text-gray-400 hover:cursor-not-allowed dark:text-gray-600",
@@ -70,13 +70,13 @@ const Navigation = () => {
       <div className="flex flex-row *:px-2 items-center">
         <Link to={location.pathname} onClick={toggleLanguage} className="flex items-center justify-center self-start pt-2 lg:pt-2 lg:pr-8 justify-self-end xl:self-center xl:pt-0">{t('язык')}</Link>
         <div className="flex flex-row">
-          {/* TODO: переработать кнопки смены языка: сделать две рядом, и с подписями */}
+
         
 
         
         <Navbar.Collapse className="md:*:*:text-lg *:pl-0">
           <Navbar.Link to="/teplo-serbii/" as={Link} active={location.pathname === "/teplo-serbii/"}>{t('главная')}</Navbar.Link>
-          <Navbar.Link to="/teplo-serbii/service" as={Link} active={location.pathname === "/teplo-serbii/service/"}>{t('услуги')}</Navbar.Link>
+          <Navbar.Link to="/teplo-serbii/service" as={Link} active={location.pathname === "/teplo-serbii/service"}>{t('услуги')}</Navbar.Link>
           <Navbar.Link to="/teplo-serbii/heating" as={Link} active={location.pathname === "/teplo-serbii/heating"}>{t('отопление')}</Navbar.Link>
           <Navbar.Link to="/teplo-serbii/gas-boilers" as={Link} active={location.pathname === "/teplo-serbii/gas-boilers"}>{t('газовые котлы')}</Navbar.Link>
           <Navbar.Link to="/teplo-serbii/heat-pumps" as={Link} active={location.pathname === "/teplo-serbii/heat-pumps"}>{t('тепловые насосы')}</Navbar.Link>
