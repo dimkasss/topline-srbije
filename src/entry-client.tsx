@@ -5,9 +5,9 @@ import { Main } from "./main.tsx";
 import App from "./App.tsx";
 import { BrowserRouter } from "react-router-dom";
 
-ReactDOM.hydrateRoot(
-  document.getElementById("root")!,
-  <BrowserRouter>
-    <Main />
-  </BrowserRouter>
-);
+// ReactDOM.hydrateRoot(
+//   document.getElementById("root")!,
+//   <BrowserRouter>
+//     <Main />
+//   </BrowserRouter>
+// );
