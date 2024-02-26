@@ -9,7 +9,7 @@ const ExcelFileDownloader: React.FC<ExcelFileDownloaderProps> = ({
 }) => {
   return (
     <>
-      <a href={`src/assets/downloads/${fileName}`} download>
+      <a href={`src/assets/downloads/${fileName}`} target="_blank" download>
         {text}
       </a>
     </>

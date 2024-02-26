@@ -5,11 +5,11 @@ interface ImageProps {
 }
 
 const Image: React.FC<ImageProps> = ({ img, width, alt }) => {
-  return ( 
+  return (
     <div className="flex justify-center py-4">
-      <img src={img} width={width} alt={alt}/>
+      <img src={img} width={width} alt={alt} />
     </div>
-   );
-}
- 
+  );
+};
+
 export default Image;

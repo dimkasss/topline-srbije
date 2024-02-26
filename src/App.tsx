@@ -7,10 +7,12 @@ import AirConditionersPage from "./pages/AirConditionersPage";
 import HeatingPage from "./pages/HeatingPage";
 import { Suspense } from "react";
 import ServicePage from "./pages/ServicePage";
+import { HelmetProvider } from "react-helmet-async";
 
 const App = () => {
   return (
-    <div className="text-[--main] flex flex-col items-center justify-center h-">
+    // <HelmetProvider>
+    <div className="text-[--main] flex flex-col items-center justify-center">
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/teplo-serbii/" element={<MainPage />} />
@@ -29,6 +31,7 @@ const App = () => {
         </Routes>
       </Suspense>
     </div>
+    // </HelmetProvider>
   );
 };
 

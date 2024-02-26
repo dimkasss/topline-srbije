@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 import PageWrapper from "../components/PageWrapper";
 import Section from "../components/Section";
-import { Helmet } from "react-helmet-async";
 import Conditioners1 from "../assets/conditioners-1.jpg";
 import Conditioners2 from "../assets/conditioners-2.jpg";
 import Conditioners3 from "../assets/conditioners-3.jpg";
@@ -11,13 +10,10 @@ const AirConditionersPage = () => {
   const { t } = useTranslation();
   return (
     <>
-      <Helmet>
-        <title>{t("кондиционеры")}</title>
-        <meta name="description" content="air conditioners desc!" />
-        <link rel="canonical" href="/air-conditioners" />
-      </Helmet>
       <PageWrapper>
-        <Section doubledHeader>{t("кондиционеры")}</Section>
+        <Section doubledHeader>
+          <h1>{t("кондиционеры")}</h1>
+        </Section>
         <Image img={Conditioners1} width="700px" alt="Кондиционер" />
         <Section header>{t("конд-1")}</Section>
         <Section>
