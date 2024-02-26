@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 import fs from "node:fs/promises";
 import express from "express";
-import i18nextMiddleware from "i18next-express-middleware";
 
 // Constants
 const isProduction = process.env.NODE_ENV === "production";
@@ -36,28 +35,10 @@ if (!isProduction) {
   app.use(base, sirv("./dist/client", { extensions: [] }));
 }
 
-i18next
-  .use(i18nextMiddleware.LanguageDetector)
-  .use(FilesystemBackend)
-  .init({ preload: ["en", "de", "it"], ...otherOptions }, function () {
-    i18nextMiddleware.addRoute(
-      i18next,
-      "/:lng/*",
-      ["en", "de", "it"],
-      app,
-      "get",
-      function (req, res) {
-        //endpoint function
-      }
-    );
-  });
-app.use(i18nextMiddleware.handle(i18next));
-
 // Serve HTML
 app.use("*", async (req, res) => {
   try {
     const url = req.originalUrl.replace(base, "");
-    console.log("url incoming: ", url);
     let template;
     let render;
     if (!isProduction) {

@@ -5,7 +5,6 @@ import ViewerXLSX from "../components/ExcelFileDownloader";
 
 const ServicePage = () => {
   const { t, i18n } = useTranslation();
-  console.log("@", navigator.language);
   return (
     <PageWrapper>
       <Section doubledHeader>{t("услуги")}</Section>

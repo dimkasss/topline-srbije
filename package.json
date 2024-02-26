@@ -10,10 +10,13 @@
     "build:client": "vite build --ssrManifest --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
     "preview": "cross-env NODE_ENV=production node server",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist/client",
+    "start:client": "vite --config vite-client-config.ts",
+    "start:server": "node dist/server/entry-server.js"
   },
   "dependencies": {
     "compression": "^1.7.4",
+    "cross-env": "^7.0.3",
     "express": "^4.18.2",
     "flowbite-react": "^0.7.2",
     "i18next": "^23.8.2",

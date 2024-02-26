@@ -5,7 +5,4 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   base: "/teplo-serbii/",
-  ssr: {
-    // noExternal: ["react-helmet-async"],
-  },
 });
