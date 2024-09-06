@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:wght@300;500;700;900&family=Poppins:wght@200;300;500;700;900&family=Roboto:wght@100;300;500;900&display=swap");
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  --background: #eff0f3;
+  --secondary2: #fffffe;
+  --secondary: #4056a1;
+
+  --highlighted: #d9376e;
+  --main: #0d0d0d;
+  --paragraph: #2a2a2a;
+
+  --button: #ffcf48;
+
+  --text: #6fb3b8;
+  --negative: #3498a1;
+  --light: #badfe7;
+  --secondary: #c2edce;
+  --background: #f1f1f1;
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    user-select: none;
+  }
+}
+
+::selection {
+  background: var(--negative);
+  color: white;
+}
+
+* {
+  font-family: "Merriweather";
+  font-family: "Arial", "Roboto";
+  color: #0f0f0f;
+  background: var(--background);
+  font-size: 16px;
+  line-height: 24px;
+  scrollbar-gutter: auto;
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+.btn {
+  background: var(--button);
+}
+
+.paragraph {
+  color: var(--paragraph);
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nav,
+.nav * {
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  background: var(--negative);
+  color: white;
+}
+
+.nav:active,
+.nav *:focus {
+  color: var(--button);
+  background: var(--negative);
+}
+
+.nav:hover,
+.nav li a:hover {
+  color: var(--button);
+}
+
+.naming {
+  font-size: 2rem;
+}
+
+.naming * {
+  padding: 5rem 0;
+}
+
+p {
+  text-indent: 2.5rem;
+}
+
+ul {
+  padding-left: 4rem;
+}
+
+.main li::marker {
+  content: "• ";
+  color: black;
+  font-size: 1.2em;
+}
+
+.anchor:link {
+  color: #497ddd;
+  border-bottom: 1px solid;
+}
+.anchor:visited {
+  color: #ef7d55;
+  border-bottom: 1px solid;
+}
+.anchor:hover {
+  color: #154088;
+  border: none;
+}
+.anchor:active {
+  color: #497ddd;
+  border: none;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+.table th {
+  font-weight: bold;
+  padding: 5px;
+  background: #efefef;
+  border: 1px solid #dddddd;
+}
+.table td {
+  border: 1px solid #dddddd;
+  padding: 5px;
+}
+.table tr td:first-child,
+.table tr th:first-child {
+  border-left: none;
+}
+.table tr td:last-child,
+.table tr th:last-child {
+  border-right: none;
+}
+
+.transition-prepare {
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  border-radius: 0.3rem;
+  padding: 0.2rem;
+}
+
+.transition-in-bg {
+  transition: 0.3s;
+
+  border-color: rgb(91, 207, 207);
+}
+
+.transition-out-bg {
+  transition: 0.3s;
+  border-color: var(--background);
+}
