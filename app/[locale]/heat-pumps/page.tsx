@@ -6,7 +6,7 @@ import TeplovoyNasos3 from "@/public/teplovoy-nasos-3.jpg";
 import TeplovoyNasos4 from "@/public/teplovoy-nasos-4.jpg";
 import CustomImage from "@/src/components/CustomImage";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata({
   params: { locale },
@@ -21,7 +21,9 @@ export async function generateMetadata({
   };
 }
 
-const HeatPumpsPage = () => {
+const HeatPumpsPage = ({ params }: any) => {
+  unstable_setRequestLocale(params.locale);
+
   const t = useTranslations();
 
   return (

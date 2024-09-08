@@ -6,22 +6,20 @@ import Conditioners3 from "@/public/conditioners-3.jpg";
 import CustomImage from "@/src/components/CustomImage";
 import { PageWithLangProps } from "@/src/types";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: "ru" | "rs" };
-}) {
+export async function generateMetadata({ params }: any) {
+  const locale = params.locale;
   const t = await getTranslations({ locale });
-
   return {
     title: t("airConditioners-title"),
     description: t("airConditioners-content"),
   };
 }
 
-const AirConditionersPage: React.FC<PageWithLangProps> = () => {
+const AirConditionersPage: React.FC<PageWithLangProps> = ({ params }) => {
+  unstable_setRequestLocale(params.locale);
+
   const t = useTranslations();
 
   return (

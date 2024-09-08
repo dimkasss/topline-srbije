@@ -4,7 +4,7 @@ import ExcelFileDownloader from "@/src/components/ExcelFileDownloader";
 import { PageWithLangProps } from "@/src/types";
 import CopyableCredentials from "@/src/components/use-client/CopyableCredentials";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata({
   params: { locale },
@@ -20,6 +20,8 @@ export async function generateMetadata({
 }
 
 const ServicePage: React.FC<PageWithLangProps> = ({ params, children }) => {
+  unstable_setRequestLocale(params.locale);
+
   const t = useTranslations();
 
   return (

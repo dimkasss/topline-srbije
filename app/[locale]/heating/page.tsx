@@ -13,7 +13,7 @@ import HeatingSystems9 from "@/public/sys-otopl-9.png";
 import CustomImage from "@/src/components/CustomImage";
 import { PageWithLangProps } from "@/src/types";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata({
   params: { locale },
@@ -28,7 +28,9 @@ export async function generateMetadata({
   };
 }
 
-const HeatingPage: React.FC<PageWithLangProps> = () => {
+const HeatingPage: React.FC<PageWithLangProps> = ({ params }: any) => {
+  unstable_setRequestLocale(params.locale);
+
   const t = useTranslations();
 
   return (

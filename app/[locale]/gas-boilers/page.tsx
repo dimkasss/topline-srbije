@@ -5,7 +5,7 @@ import GasBoilers2 from "@/public/gas-boilers-2.jpg";
 import CustomImage from "@/src/components/CustomImage";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata({
   params: { locale },
@@ -20,7 +20,9 @@ export async function generateMetadata({
   };
 }
 
-const GasBoilersPage = () => {
+const GasBoilersPage = ({ params }: any) => {
+  unstable_setRequestLocale(params.locale);
+
   const t = useTranslations();
 
   return (
