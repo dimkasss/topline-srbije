@@ -38,9 +38,6 @@ export async function generateMetadata({
       address: false,
       telephone: false,
     },
-    other: {
-      "google-site-verification": "MtOpFI0a1y2uSQQ5N-QWwamds4AfNLwl9Uu8zufycig",
-    },
   };
 }
 
