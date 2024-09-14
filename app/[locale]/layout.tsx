@@ -55,6 +55,10 @@ const RootLayout: React.FC<PageWithLangProps> = async ({
 
   return (
     <html lang={locale}>
+      <meta
+        name="google-site-verification"
+        content="MtOpFI0a1y2uSQQ5N-QWwamds4AfNLwl9Uu8zufycig"
+      />
       <body className={inter.className}>
         <NextIntlClientProvider messages={dict}>
           <Navigation params={params} />
