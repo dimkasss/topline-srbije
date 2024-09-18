@@ -52,6 +52,11 @@ const RootLayout: React.FC<PageWithLangProps> = async ({
   const { locale } = params;
   unstable_setRequestLocale(locale);
   const dict = await getMessages();
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: dict["название"],
+  };
 
   return (
     <html lang={locale}>
@@ -60,6 +65,10 @@ const RootLayout: React.FC<PageWithLangProps> = async ({
           <Navigation params={params} />
           {children}
         </NextIntlClientProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </body>
     </html>
   );
