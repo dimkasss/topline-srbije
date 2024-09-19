@@ -1,4 +1,5 @@
-# Toplina Srbije - a website for providing services for installation, assembly and maintenance of heating systems, air conditioning, heat pumps, heated floors, gas boilers, etc.
+# Toplina Srbije
+## A website for providing services for installation, assembly and maintenance of heating systems, air conditioning, heat pumps, heated floors, gas boilers, etc.
 
 Node.js 18.17^ required
 
