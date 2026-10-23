@@ -105,4 +105,7 @@ npm run dev
 
 Open **http://localhost:3000** in your browser.
 
-For a
+For a production build:
+
+npm run build
+npm start
